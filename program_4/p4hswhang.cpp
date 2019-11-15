@@ -123,12 +123,14 @@ int main() {
 
     // Creates D matrix and P matrix
     floyd(n, adjMatrix, &D, &P);
+
+    // Outputs D,P matrix
     std::cout << "============ D Matrix ============" << std::endl;
     printMatrix(D);
     std::cout << "============ P Matrix ============" << std::endl;
     printMatrix(P);
 
-    do {
+    do { // Loop to user input
         std::cout << "Enter a source vertex and destination vertex: ";
         std::cin >> sourceVert >> destVert;
 
@@ -141,5 +143,5 @@ int main() {
         std::cin >> morePath;
     } while (isContinue(morePath));
 
-        return 0;
+    return 0;
 }
