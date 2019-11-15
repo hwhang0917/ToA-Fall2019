@@ -113,7 +113,6 @@ int main() {
     // Adjacency matrix[i][j] shows distance between vertex [i] and vertex[j] (9999 = infinity)
     std::vector< std::vector<int> > adjMatrix; // 2D-adjacency matrix vector
     std::vector< std::vector<int> > D, P; // D matrix and P matrix
-    std::vector<int> line; // single line of vectors
 
     int sourceVert, destVert; // source vertex, destination vertex
     char morePath; // user input to continue program
