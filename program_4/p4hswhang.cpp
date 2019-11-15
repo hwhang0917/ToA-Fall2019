@@ -99,7 +99,7 @@ void floyd (int n,
     }   
 }
 
-void path (int q, int r, std::vector< std::vector<int> >* P) { // TODO: fix path function
+void path (int q, int r, std::vector< std::vector<int> >* P) {
     // outputs the shortest path from Vq to Vr as vector
     if ((*P)[q][r] != 0) {
         path(q, (*P)[q][r] - 1, P);
