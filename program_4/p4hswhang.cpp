@@ -100,14 +100,12 @@ void floyd (int n,
 }
 
 void path (int q, int r, std::vector< std::vector<int> >* P) { // TODO: fix path function
-    // ouotputs the shortest path from Vq to Vr
-    int P_vertex = (*P)[q][r];
-
-    if (P_vertex != 0) {
-        path(q, P_vertex, P);
-        std::cout << P_vertex << " -> ";
-        path(P_vertex, r, P);
-    } 
+    // outputs the shortest path from Vq to Vr as vector
+    if ((*P)[q][r] != 0) {
+        path(q, (*P)[q][r] - 1, P);
+        std::cout << (*P)[q][r] << " -> ";
+        path((*P)[q][r] - 1, r, P);
+    }
 }
 
 /* ====== Main function ====== */
@@ -136,9 +134,11 @@ int main() {
         std::cin >> sourceVert >> destVert;
 
         // Output Shortest Path
+        std::cout << sourceVert << " -> ";
         path(sourceVert-1, destVert-1, &P);
-
-        std::cout << std::endl << "More paths? ";
+        std::cout << destVert << " with weight " << D[sourceVert-1][destVert-1] << std::endl;
+    
+        std::cout << "More paths? ";
         std::cin >> morePath;
     } while (isContinue(morePath));
 
